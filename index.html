@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade Calculator</title>
+<style>
+body{font-family:Arial;background:#fff7ed;padding:25px}
+main{max-width:500px;margin:auto;background:white;padding:30px;border-radius:15px}
+label{display:block;margin-top:12px}
+input{width:100%;padding:12px;box-sizing:border-box;margin-top:6px;border:1px solid #fdba74;border-radius:6px}
+button{width:100%;padding:14px;background:#c2410c;color:white;border:0;border-radius:8px;margin-top:20px;cursor:pointer}
+#result{background:#ffedd5;padding:20px;border-radius:10px;margin-top:20px;line-height:2;white-space:pre-line}
+</style>
+</head>
+<body>
+<main>
+<h1>Grade Calculator</h1>
+<p>Calculate your academic performance.</p>
+<label>English</label>
+<input type="number" class="mark" min="0" max="100" placeholder="Enter marks">
+<label>Mathematics</label>
+<input type="number" class="mark" min="0" max="100" placeholder="Enter marks">
+<label>Science</label>
+<input type="number" class="mark" min="0" max="100" placeholder="Enter marks">
+<label>Computer Studies</label>
+<input type="number" class="mark" min="0" max="100" placeholder="Enter marks">
+<label>Social Studies</label>
+<input type="number" class="mark" min="0" max="100" placeholder="Enter marks">
+<button onclick="calculate()">Calculate Grade</button>
+<div id="result">Your result will appear here.</div>
+<p>Sample grading scale: A+ 80, A 70, A- 60, B 50, C 40, D 33.</p>
+</main>
+<script>
+function calculate(){
+ const fields=[...document.querySelectorAll(".mark")];
+ const result=document.getElementById("result");
+ if(fields.some(f=>f.value===""||Number(f.value)<0||Number(f.value)>100)){
+  result.textContent="Enter valid marks between 0 and 100 for every subject.";
+  return;
+ }
+ const marks=fields.map(f=>Number(f.value));
+ const total=marks.reduce((a,b)=>a+b,0);
+ const average=total/marks.length;
+ let grade;
+ if(marks.some(m=>m<33)) grade="F";
+ else if(average>=80) grade="A+";
+ else if(average>=70) grade="A";
+ else if(average>=60) grade="A-";
+ else if(average>=50) grade="B";
+ else if(average>=40) grade="C";
+ else grade="D";
+ result.textContent="Total Marks: "+total+"/500\nAverage: "+average.toFixed(2)+"%\nGrade: "+grade;
+}
+</script>
+</body>
+</html>
