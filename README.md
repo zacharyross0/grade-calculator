@@ -1,23 +1,26 @@
-# Grade Calculator
+## Grade Calculation Guide
 
-An educational tool for calculating academic results.
+This application helps students
+calculate their academic results.
 
-## Features
+### Calculation Information
 
+- Subject marks
 - Total marks
 - Average percentage
-- Sample letter grades
+- Grade estimation
 
-## How to Use
+### How to Use
 
-Enter subject marks and click Calculate Grade.
+1. Enter the obtained marks.
+2. Provide the maximum marks.
+3. Calculate the result.
+4. Review the displayed grade.
 
-## Technologies
+### Important Notes
 
-- HTML
-- CSS
-- JavaScript
+Grading systems may vary between
+educational institutions.
 
-## Running Locally
-
-Open `index.html` in a modern web browser.
+Always use the grading scale
+specified by the relevant institution.
