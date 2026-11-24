@@ -24,3 +24,12 @@ educational institutions.
 
 Always use the grading scale
 specified by the relevant institution.
+## Manual Testing Checklist
+
+- [ ] Calculate results using a simple known marks example.
+- [ ] Check the result at a grade boundary.
+- [ ] Reject values beyond the permitted marks range.
+
+### Test Notes
+
+Record the observed result and any reproducible issue after running the tests.
